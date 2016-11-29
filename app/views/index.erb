@@ -1,0 +1,11 @@
+<h1>HOME PAGE</h1>
+ <% if session[:id] %>
+      <a href="/users/<%= current_user.id %> ">Profile Page</a>
+      <form action="/logout" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Logout">
+      </form>
+  <% else %>
+      <a href="/login">Login</a>
+      <a href="/users/new">Register</a>
+  <% end %>
